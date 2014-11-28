@@ -18,5 +18,23 @@ For simplicity's sake, I won't be writing tests. (Sorry!)
  
 I'll consider this proof of concept a success if Wisper's footprint in the controllers codebase is less than 3 LOC per
  action. (Probably this criteria will change)
+ 
+# Part 1 \& 2
+
+In the main app, there is a scaffolded model called `MyModel`. I'm using Wisper to "log" what happens with this model. 
+
+In `app/controller/my_models_controller.rb`, I placed `broadcast`s on the main controller actions (`create`, `update`, 
+ `destroy`). In `config/initializers/wisper_subscriber.rb`, I setup an array as a "message storage" and create a global
+ listener in the `LoggingListener` class. 
+ 
+You can find all listeners in `app/listeners`.
+
+Finally, to see it in action, I modified `app/views/layouts/application.html.erb` to display all the messages.
+
+Up to now, only `/my_models` has any content (HTTP).
+
+# Part 3 (engines and mailing)
+
+I'm currently setting up the engines...
 
 [1]: https://github.com/krisleech/wisper    "Wisper"

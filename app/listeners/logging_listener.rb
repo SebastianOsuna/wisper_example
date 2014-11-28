@@ -1,4 +1,4 @@
-class MailingListener
+class LoggingListener
     def create_model_success model
         MESSAGES << "New model created (#{model.id})"
     end

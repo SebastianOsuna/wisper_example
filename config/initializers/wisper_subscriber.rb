@@ -1,4 +1,4 @@
 # require 'wisper'
 MESSAGES = []
 
-Wisper.subscribe(MailingListener.new)
+Wisper.subscribe(LoggingListener.new)
