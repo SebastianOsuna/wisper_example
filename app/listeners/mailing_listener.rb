@@ -1,12 +1,17 @@
 class MailingListener
     def create_model_success model
-        puts '#'*50
-        p model
-        puts '#'*50
+        MESSAGES << "New model created (#{model.id})"
     end
     def create_model_error model
-        puts '='*50
-        p model
-        puts '='*50
+        MESSAGES << "Error creating model (#{model.errors.size} errors}"
+    end
+    def model_destroyed
+        MESSAGES << 'Model destroyed'
+    end
+    def edit_model_success model
+        MESSAGES << "Model #{model.id} edited successfully"
+    end
+    def edit_model_error model
+        MESSAGES << "#{model.errors.size} errors while editing model #{model.id}"
     end
 end
