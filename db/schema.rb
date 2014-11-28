@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127065247) do
+ActiveRecord::Schema.define(version: 20141128052707) do
+
+  create_table "engine1_another_models", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "my_models", force: true do |t|
     t.datetime "created_at"

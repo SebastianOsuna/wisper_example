@@ -1,0 +1,23 @@
+<h1>Listing another_models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @another_models.each do |another_model| %>
+      <tr>
+        <td><%= link_to 'Show', another_model %></td>
+        <td><%= link_to 'Edit', edit_another_model_path(another_model) %></td>
+        <td><%= link_to 'Destroy', another_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Another model', new_another_model_path %>
