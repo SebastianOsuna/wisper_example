@@ -35,6 +35,16 @@ Up to now, only `/my_models` has any content (HTTP).
 
 # Part 3 (engines and mailing)
 
-I'm currently setting up the engines...
+`Engine1` was created in the `engines/` directory. The purpose here is to test App -> Engine and Engine -> App 
+ communication through Wisper.
+ 
+In the first scenario, App -> Engine, I created a new global listener `MailingListener` in Engine1 in `engine1/app/listeners`.
+ The listener is initialized at `engine1/config/initializers/wisper_listeners.rb`. In the App, I attached the broadcast 
+ to the create callback of the App's `MyModel`. In this example, instead of sending an actual mail, I just echo the 
+ created model on the stdout.
+  
+ 
+ 
+ 
 
 [1]: https://github.com/krisleech/wisper    "Wisper"
