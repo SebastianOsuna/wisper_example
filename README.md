@@ -42,6 +42,19 @@ In the first scenario, App -> Engine, I created a new global listener `MailingLi
  The listener is initialized at `engine1/config/initializers/wisper_listeners.rb`. In the App, I attached the broadcast 
  to the create callback of the App's `MyModel`. In this example, instead of sending an actual mail, I just echo the 
  created model on the stdout.
+ 
+In theory, you could use this scenario to setup an app watching module. Logging activity and exceptions beyond stdout,
+ send mails or post messages to remote queues, are some of the tasks that come to mind. The application would be decoupled
+ from this module; you could change the implementation without impacting the application.
+ 
+The second scenario is similar but the other way around. The application will be hearing the engine(s). How is this useful? 
+ Hexagonal Architecture comes to mind. I have no particular use case for this yet, but... It can be done anyway.
+ 
+In this scenario, Engine1's `AnotherModel` has an update callback; if the model's `id` is even (just to make it interesting)
+ another message will be broadcasted so that our `LoggingListener` can catch the message and create another message to
+ our **Part 1** message array. 
+ 
+**Status:** Attempt 1 for scenario 1 didn't work
   
  
  

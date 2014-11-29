@@ -35,7 +35,7 @@ module Engine1
 
     # PATCH/PUT /another_models/1
     def update
-      if @another_model.update(another_model_params)
+      if @another_model.update(another_model_params || {})
         redirect_to @another_model, notice: 'Another model was successfully updated.'
       else
         render :edit

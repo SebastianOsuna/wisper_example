@@ -14,4 +14,7 @@ class LoggingListener
     def edit_model_error model
         MESSAGES << "#{model.errors.size} errors while editing model #{model.id}"
     end
+    def updated_another_model model
+        MESSAGE << "Event from Engine1: #{model.inspect} updated"
+    end
 end
