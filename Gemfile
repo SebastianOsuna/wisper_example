@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'wisper'
 gem 'engine1', path: 'engines/engine1'
+gem 'engine2', path: 'engines/engine2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

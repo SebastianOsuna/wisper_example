@@ -4,6 +4,12 @@ PATH
     engine1 (0.0.1)
       rails (~> 4.1.6)
 
+PATH
+  remote: engines/engine2
+  specs:
+    engine2 (0.0.1)
+      rails (~> 4.1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,6 +117,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   engine1!
+  engine2!
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.6)
