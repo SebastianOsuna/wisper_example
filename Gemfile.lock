@@ -8,6 +8,7 @@ PATH
   remote: engines/engine2
   specs:
     engine2 (0.0.1)
+      bunny
       rails (~> 4.1.6)
 
 GEM
@@ -39,8 +40,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    amq-protocol (1.9.2)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    bunny (1.6.3)
+      amq-protocol (>= 1.9.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -94,7 +98,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.2.1)
+    sprockets-rails (2.2.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)

@@ -64,6 +64,8 @@ For this task, `Engine1` will be the publisher and `Engine2` will be the listene
  the corresponding listener. It will simulate the push of a message to a remote queue, so I'll be using Wisper's async 
  option for this events. (This gives me the idea to do a Wisper-RabbitMQ plugin or even a SQS one... we'll see).
  
+**NOTE:** If you want to run this last part, you should setup the RabbitMQ queue described in this [guide](http://rubybunny.info/articles/getting_started.html). 
+ 
  
 
 [1]: https://github.com/krisleech/wisper    "Wisper"

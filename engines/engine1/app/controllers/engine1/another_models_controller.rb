@@ -2,6 +2,8 @@ require_dependency "engine1/application_controller"
 
 module Engine1
   class AnotherModelsController < ApplicationController
+    include Wisper::Publisher
+
     before_action :set_another_model, only: [:show, :edit, :update, :destroy]
 
     # GET /another_models
@@ -27,6 +29,7 @@ module Engine1
       @another_model = AnotherModel.new(another_model_params)
 
       if @another_model.save
+        broadcast(:engine1_another_model_created, @another_model)
         redirect_to @another_model, notice: 'Another model was successfully created.'
       else
         render :new
