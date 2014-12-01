@@ -53,8 +53,6 @@ The second scenario is similar but the other way around. The application will be
 In this scenario, Engine1's `AnotherModel` has an update callback; if the model's `id` is even (just to make it interesting)
  another message will be broadcasted so that our `LoggingListener` can catch the message and create another message to
  our **Part 1** message array. 
- 
-**Status:** Attempt 1 for scenario 1 didn't work
   
  
  
