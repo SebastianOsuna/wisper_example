@@ -16,7 +16,7 @@ The business module will act as the publisher (as it shouldn't care if mails are
  
 For simplicity's sake, I won't be writing tests. (Sorry!)
  
-I'll consider this proof of concept a success if Wisper's footprint in the controllers codebase is less than 3 LOC per
+I'll consider this proof of concept successful if Wisper's footprint in the controllers codebase is less than 3 LOC per
  action. (Probably this criteria will change)
  
 # Part 1 \& 2
@@ -55,6 +55,14 @@ In this scenario, Engine1's `AnotherModel` has an update callback; if the model'
  our **Part 1** message array. 
   
 # Part 4 (engine to engine)
+
+In this final part, I'll be attempting to communicate two engines using Wisper. This might be my main use case since 
+ I'm using engines to divide different POVs of the same application.
+ 
+For this task, `Engine1` will be the publisher and `Engine2` will be the listener. Whenever a `AnotherModel` is created,
+ it's controller will broadcast the event. `QueueListener` (`engines/engine2/app/listeners/queue_listener.rb`) will be 
+ the corresponding listener. It will simulate the push of a message to a remote queue, so I'll be using Wisper's async 
+ option for this events. (This gives me the idea to do a Wisper-RabbitMQ plugin or even a SQS one... we'll see).
  
  
 
