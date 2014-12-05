@@ -16,9 +16,6 @@ The business module will act as the publisher (as it shouldn't care if mails are
  
 For simplicity's sake, I won't be writing tests. (Sorry!)
  
-I'll consider this proof of concept successful if Wisper's footprint in the controllers codebase is less than 3 LOC per
- action. (Probably this criteria will change)
- 
 # Part 1 \& 2
 
 In the main app, there is a scaffolded model called `MyModel`. I'm using Wisper to "log" what happens with this model. 
@@ -61,11 +58,16 @@ In this final part, I'll be attempting to communicate two engines using Wisper. 
  
 For this task, `Engine1` will be the publisher and `Engine2` will be the listener. Whenever a `AnotherModel` is created,
  it's controller will broadcast the event. `QueueListener` (`engines/engine2/app/listeners/queue_listener.rb`) will be 
- the corresponding listener. It will simulate the push of a message to a remote queue, so I'll be using Wisper's async 
- option for this events. (This gives me the idea to do a Wisper-RabbitMQ plugin or even a SQS one... we'll see).
+ the corresponding listener. It will simulate the push of a message to a remote RabbitMQ queue using `bunny`. (This gives me the idea to do a Wisper-RabbitMQ plugin or even a SQS one... we'll see).
+ 
+I wanted to try Wisper's async mode for this last part, but it requires additional dependencies, so I will be doing that
+ on a future proof of concept.
  
 **NOTE:** If you want to run this last part, you should setup the RabbitMQ queue described in this [guide](http://rubybunny.info/articles/getting_started.html). 
  
- 
+# Conclusion
+
+I'll be surely using Wisper in future projects to decouple the main projects from logging, mailing and queueing tasks that
+ I can place in other engines.
 
 [1]: https://github.com/krisleech/wisper    "Wisper"
